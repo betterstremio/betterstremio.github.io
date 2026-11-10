@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Better Stremio: Stremio addon app for LG TVs and Android</title>
-<meta name="description" content="A free, native app that plays your own Stremio addons on LG webOS, Android TV, Google TV, Fire TV and phones.">
+<title>Origin: native app for Stremio and Nuvio on LG TVs and Android</title>
+<meta name="description" content="A free, native app for your Stremio and Nuvio accounts and addons on LG webOS, Android TV, Google TV, Fire TV and phones.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Better Stremio: Stremio addon app for LG TVs and Android">
-<meta property="og:description" content="Version 2.0.0 adds a For You home with previews that play when you rest on a card.">
+<meta property="og:title" content="Origin: native app for Stremio and Nuvio on LG TVs and Android">
+<meta property="og:description" content="Keep Stremio and Nuvio signed in side by side, with about 36 personal rows on Home.">
 <meta property="og:image" content="https://betterstremio.github.io/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.png" type="image/png">
@@ -70,6 +70,7 @@
   .open-cards > .card { grid-column: 1 / -1; }
   @media (min-width: 1024px) { .open-cards > .card { grid-column: auto / span 4; } }
   @media (max-width: 639px) { .open-cards .panel { --p-h: 124px; } }
+  @media (max-width: 639px) { #accounts .open-cards .panel { --p-h: 200px; } }
   /* the two download cards */
   .downloads > .card { grid-column: 1 / -1; }
   .downloads > .dl-pic { grid-column: 1 / -1; height: 300px; margin: 0; }
@@ -90,7 +91,7 @@
 <header class="nav">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top">Better Stremio</a>
+    <a class="nav__logo" href="#top">Origin</a>
     <nav class="nav__links" aria-label="Main">
       <div class="nav__item">
         <a class="nav__link" href="#features">Features <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -102,6 +103,7 @@
           </div>
         </div>
       </div>
+      <div class="nav__item"><a class="nav__link" href="#accounts">Accounts</a></div>
       <div class="nav__item"><a class="nav__link" href="#video">Video</a></div>
       <div class="nav__item"><a class="nav__link" href="https://github.com/betterstremio/webos">Source</a></div>
     </nav>
@@ -116,14 +118,14 @@
   <section class="hero hero--collage" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-5">
-        <h1 id="hero-h">Stremio addon app for LG TVs and Android</h1>
-        <p class="hero__lead">Better Stremio plays your own Stremio addons in a native app written in C. Version 2.0.0 adds a For You home, with previews that play when you rest on a card.</p>
+        <h1 id="hero-h">Stremio and Nuvio app for LG TVs and Android</h1>
+        <p class="hero__lead">Origin plays your own addons in a native app written in C. Keep your Stremio and Nuvio accounts signed in side by side and switch in Settings.</p>
         <div class="btn-row"><a class="btn btn--primary" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#video">Watch the video</a></div>
-        <p class="hero__proof">Version 2.0.0, free and open source under GPL-3.0.</p>
+        <p class="hero__proof">Version 2.1.1, formerly Better Stremio. Free and open source under GPL-3.0.</p>
       </div>
-      <div class="hero__art span-6 start-7" data-moment="cursor-spotlight" data-moment-opts='{"rest": [0.74, 0.26], "radius": 460}' role="img" aria-label="The Better Stremio Home screen with a preview playing in the billboard">
+      <div class="hero__art span-6 start-7" data-moment="cursor-spotlight" data-moment-opts='{"rest": [0.74, 0.26], "radius": 460}' role="img" aria-label="The Origin Home screen with a preview playing in the billboard">
         <div class="ly-piece ly-piece--main d-win" aria-hidden="true">
-          <div class="d-win__bar"><span class="d-win__dots"><i></i><i></i><i></i></span><span>Better Stremio · Home</span></div>
+          <div class="d-win__bar"><span class="d-win__dots"><i></i><i></i><i></i></span><span>Origin · Home</span></div>
           <div class="d-win__body"><img class="app-shot" src="media/hero.jpg" srcset="media/hero-640.jpg 640w, media/hero.jpg 1280w" sizes="(max-width: 639px) 620px, 1000px" width="1280" height="720" alt="" fetchpriority="high"></div>
         </div>
         <div class="ly-piece ly-piece--note d-card" aria-hidden="true" data-ly-steps="700">
@@ -139,11 +141,11 @@
   <section class="section" id="video" aria-labelledby="video-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="video-h">Better Stremio 2.0.0 in 78 seconds</h2>
-        <p>Recorded from the app’s desktop build on a demo profile. The film scenes, comedy sketches and voice were made with AI, so no studio’s footage appears.</p>
+        <h2 id="video-h">The launch video from version 2.0.0</h2>
+        <p>Made when the app was called Better Stremio, from its desktop build on a demo profile. The film scenes, comedy sketches and voice were made with AI, so no studio’s footage appears.</p>
       </div>
       <figure class="frame frame--photo fit-screen" style="--ratio: 56.25%">
-        <video class="frame__img" controls playsinline preload="metadata" poster="media/brag.jpg" aria-label="Launch video for Better Stremio 2.0.0">
+        <video class="frame__img" controls playsinline preload="metadata" poster="media/brag.jpg" aria-label="Launch video from version 2.0.0">
           <source src="media/brag.mp4" type="video/mp4">
         </video>
       </figure>
@@ -181,18 +183,43 @@
     </div>
   </section>
 
+  <section class="section" id="accounts" aria-labelledby="accounts-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="accounts-h">Two accounts in one app. <span class="muted">Stremio and Nuvio both stay signed in.</span></h2>
+      </div>
+      <div class="grid open-cards">
+        <article class="card card--row">
+          <h3>Switches accounts in Settings</h3>
+          <p>Settings > Account swaps Stremio and Nuvio on the device. Each keeps its own library and addons, and the top bar names the one in use.</p>
+          <div class="panel panel--inset"><img class="frame__img" src="media/accounts-640.jpg" width="640" height="360" alt="The Account page in Settings with a switch to Nuvio" loading="lazy"></div>
+        </article>
+        <article class="card card--row">
+          <h3>Asks who is watching</h3>
+          <p>Nuvio profiles keep their own addons, library and rows. PIN locks work, and you can add a profile from the picker.</p>
+          <div class="panel panel--inset"><img class="frame__img" src="media/profiles-640.jpg" width="640" height="360" alt="The Who's watching screen with an Add profile tile" loading="lazy"></div>
+        </article>
+        <article class="card card--row">
+          <h3>Fills Home with 36 rows</h3>
+          <p>Because you watched, Top 10, your languages, actors and moods, worked out on your device from your own history.</p>
+          <div class="panel panel--inset"><img class="frame__img" src="media/rows-640.jpg" width="640" height="360" alt="Home with a Top 10 series row and a New on Prime Video row" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section ground-surface" id="download" aria-labelledby="download-h">
     <div class="wrap">
       <div class="section-head">
         <h2 id="download-h">Downloads for LG webOS and Android</h2>
-        <p>Both are version 2.0.0. The app ships empty: add your own Stremio account and addons, and a free TMDB key for For You.</p>
+        <p>Both are version 2.1.1. The app ships empty: add your own Stremio or Nuvio account and addons, and a free TMDB key for For You.</p>
       </div>
       <div class="grid downloads">
         <figure class="frame frame--photo dl-pic"><img class="frame__img" src="media/billboard.jpg" width="800" height="358" alt="The Home billboard with Play and More info buttons" loading="lazy"></figure>
         <article class="card card--row">
           <span class="ic-tile ic-tile--40 ic-tile--wide"><img class="ic ic-40 ic-wide" src="assets/icons/lg.svg" alt="LG" width="40" height="19"></span>
           <h3>LG webOS TVs</h3>
-          <p>For webOS 3 or later on ARM. Install the 5.4 MB .ipk on a TV in Developer Mode.</p>
+          <p>For webOS 3 or later on ARM. Install the 5.5 MB .ipk on a TV in Developer Mode.</p>
           <ul class="rows">
             <li><span class="rows__name">Download the .ipk from Releases</span></li>
             <li><span class="rows__name">Put the TV in Developer Mode</span></li>
@@ -203,7 +230,7 @@
         <article class="card card--row">
           <span class="ic-tile ic-tile--40"><img class="ic ic-40 ic-land" src="assets/icons/android.svg" alt="Android" width="40" height="24"></span>
           <h3>Android TV, Fire TV and phones</h3>
-          <p>For Android 7.0 or later on ARM, in one 14.6 MB APK. Tested on emulators so far, not yet on real devices.</p>
+          <p>For Android 7.0 or later on ARM, in one 14.8 MB APK. Tested on emulators so far, not yet on real devices.</p>
           <ul class="rows">
             <li><span class="rows__name">Download the APK from Releases</span></li>
             <li><span class="rows__name">Allow installs from that app</span></li>
@@ -220,7 +247,7 @@
   <div class="wrap">
     <div class="closing__cta close--type">
       <div class="section-head">
-        <h2 id="close-h">Download Better Stremio</h2>
+        <h2 id="close-h">Download Origin</h2>
         <p>Free on LG webOS and Android, with updates from inside the app.</p>
       </div>
       <a class="btn btn--primary btn--xl btn--wide" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
@@ -228,9 +255,9 @@
     <div class="closing__links">
       <div class="grid">
         <div class="span-6 stack-4">
-          <a class="nav__logo" href="#top">Better Stremio</a>
+          <a class="nav__logo" href="#top">Origin</a>
           <div class="legal-notes">
-            <p>Stremio™ is a trademark of its owner. This project is independent and unofficial, and is not affiliated with, endorsed by or sponsored by Stremio. The name only describes compatibility.</p>
+            <p>Stremio™ and Nuvio are the names of their owners. Origin is independent and unofficial, and is not affiliated with, endorsed by or sponsored by Stremio or Nuvio. The names only describe compatibility.</p>
             <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
             <p>LG and Android names and logos are trademarks of their owners.</p>
           </div>
@@ -239,7 +266,7 @@
         <div class="span-3 footer__col"><h3>Reports</h3><ul><li><a href="https://github.com/betterstremio/webos/issues">webOS issues</a></li><li><a href="https://github.com/betterstremio/android/issues">Android issues</a></li></ul></div>
       </div>
       <div class="footer__legal">
-        <span>&copy; 2026 Better Stremio, GPL-3.0</span>
+        <span>&copy; 2026 Origin, GPL-3.0</span>
       </div>
     </div>
   </div>
