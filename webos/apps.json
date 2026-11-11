@@ -1,0 +1,33 @@
+{
+  "paging": {
+    "page": 1,
+    "count": 1,
+    "maxPage": 1,
+    "itemsTotal": 1
+  },
+  "packages": [
+    {
+      "id": "tv.stremioorigin.app",
+      "title": "Origin",
+      "iconUri": "https://betterstremio.github.io/webos/icon.png",
+      "pool": "main",
+      "manifestUrl": "https://betterstremio.github.io/webos/api/apps/tv.stremioorigin.app/manifest.json",
+      "shortDescription": "Stremio and Nuvio accounts on your LG TV: artwork, trailers, the best stream in one press, subtitles, torrents. Unofficial.",
+      "manifest": {
+        "id": "tv.stremioorigin.app",
+        "version": "2.1.4",
+        "type": "native",
+        "title": "Origin",
+        "appDescription": "Stremio and Nuvio accounts on your LG TV: artwork, trailers, the best stream in one press, subtitles, torrents. Unofficial.",
+        "iconUri": "https://betterstremio.github.io/webos/icon.png",
+        "sourceUrl": "https://github.com/betterstremio/origin",
+        "rootRequired": false,
+        "ipkUrl": "https://github.com/betterstremio/origin/releases/download/v2.1.4/tv.stremioorigin.app_2.1.4_arm.ipk",
+        "ipkHash": {
+          "sha256": "ac093242d2205c6d6fc5828744c752020a95df7e802f36aea7f0d5461492b55a"
+        },
+        "releaseNotes": "A clearer way to add your TMDB key, and more control over For You.\n\n**TMDB key**\n- Settings > Keys has a TMDB key row that says which key is in use: the one from your Nuvio account, your own, or none\n- If the app is using your Nuvio account's key, you can keep it, stop using it, or add your own instead. You can switch back to the Nuvio key at any time\n- A key you remove stays removed. The Nuvio key no longer comes back on its own after the next sync\n- Windows: no more QR code. Copy your key, then press Paste key, Enter or Ctrl+V. The card links to themoviedb.org if you don't have a key yet, and tells you if TMDB turned the key down\n\n**For You**\n- Pick a main language and a second one in Settings > For You. Rows in those languages show up more often, without hiding the rest. Automatic works as before\n- New setting, Card opens after: how long the cinematic Home waits before a card opens. The default is now 0.25 s (it was 0.12 s). Set it to At once for the old timing\n\nThis is an independent, unofficial app. It is not affiliated with or endorsed by Stremio or Nuvio.\n\nUpdates: Settings > About offers 2.1.4.\n"
+      }
+    }
+  ]
+}
