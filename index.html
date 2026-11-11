@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Origin: native app for Stremio and Nuvio on LG TVs and Android</title>
-<meta name="description" content="A free, native app for your Stremio and Nuvio accounts and addons on LG webOS, Android TV, Google TV, Fire TV and phones.">
+<title>Origin: native app for Stremio and Nuvio on LG TVs, Android and Windows</title>
+<meta name="description" content="A free, native app for your Stremio and Nuvio accounts and addons on LG webOS, Android TV, Google TV, Fire TV and Windows.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Origin: native app for Stremio and Nuvio on LG TVs and Android">
+<meta property="og:title" content="Origin: native app for Stremio and Nuvio on LG TVs, Android and Windows">
 <meta property="og:description" content="Keep Stremio and Nuvio signed in side by side, with about 36 personal rows on Home.">
 <meta property="og:image" content="https://betterstremio.github.io/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,12 +71,12 @@
   @media (min-width: 1024px) { .open-cards > .card { grid-column: auto / span 4; } }
   @media (max-width: 639px) { .open-cards .panel { --p-h: 124px; } }
   @media (max-width: 639px) { #accounts .open-cards .panel { --p-h: 200px; } }
-  /* the two download cards */
+  /* the three download cards, the picture across the top */
   .downloads > .card { grid-column: 1 / -1; }
   .downloads > .dl-pic { grid-column: 1 / -1; height: 300px; margin: 0; }
   .dl-pic .frame__img { object-position: 100% 50%; }
   @media (max-width: 767px) { .downloads .rows { display: none; } }
-  @media (min-width: 768px) { .downloads > .card, .downloads > .dl-pic { grid-column: auto / span 4; } .downloads > .dl-pic { height: auto; } }
+  @media (min-width: 768px) { .downloads > .card { grid-column: auto / span 4; } }
   .downloads .card > p { margin: 0; }
   .downloads .rows { margin-top: var(--s-4); }
   .downloads .btn-row { margin-top: var(--s-5); }
@@ -118,10 +118,10 @@
   <section class="hero hero--collage" data-enter aria-labelledby="hero-h">
     <div class="wrap"><div class="hero-text grid hero__grid">
       <div class="hero__text span-5">
-        <h1 id="hero-h">Stremio and Nuvio app for LG TVs and Android</h1>
+        <h1 id="hero-h">Stremio and Nuvio app for LG TVs, Android and Windows</h1>
         <p class="hero__lead">Origin plays your own addons in a native app written in C. Keep your Stremio and Nuvio accounts signed in side by side and switch in Settings.</p>
         <div class="btn-row"><a class="btn btn--primary" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#video">Watch the video</a></div>
-        <p class="hero__proof">Version 2.1.2, formerly Better Stremio. Free and open source under GPL-3.0.</p>
+        <p class="hero__proof">Version 2.1.3, formerly Better Stremio. Free and open source under GPL-3.0.</p>
       </div>
       <div class="hero__art span-6 start-7" data-moment="cursor-spotlight" data-moment-opts='{"rest": [0.74, 0.26], "radius": 460}' role="img" aria-label="The Origin Home screen with a preview playing in the billboard">
         <div class="ly-piece ly-piece--main d-win" aria-hidden="true">
@@ -211,8 +211,8 @@
   <section class="section ground-surface" id="download" aria-labelledby="download-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="download-h">Downloads for LG webOS and Android</h2>
-        <p>Both are version 2.1.2. The app ships empty: add your own Stremio or Nuvio account and addons, and a free TMDB key for For You.</p>
+        <h2 id="download-h">Downloads for LG webOS, Android and Windows</h2>
+        <p>All three are version 2.1.3. The app ships empty: add your own Stremio or Nuvio account and addons, and a free TMDB key for For You.</p>
       </div>
       <div class="grid downloads">
         <figure class="frame frame--photo dl-pic"><img class="frame__img" src="media/billboard.jpg" width="800" height="358" alt="The Home billboard with Play and More info buttons" loading="lazy"></figure>
@@ -229,14 +229,25 @@
         </article>
         <article class="card card--row">
           <span class="ic-tile ic-tile--40"><img class="ic ic-40 ic-land" src="assets/icons/android.svg" alt="Android" width="40" height="24"></span>
-          <h3>Android TV, Fire TV and phones</h3>
-          <p>For Android 7.0 or later on ARM, in one 14.8 MB APK. Tested on emulators so far, not yet on real devices.</p>
+          <h3>Android TV and Fire TV</h3>
+          <p>For Android 7.0 or later on ARM. Take the 7.2 MB arm64 APK for most devices, or the 6.8 MB armv7 one for Fire TV sticks and older boxes. Tested on emulators so far, not yet on real devices.</p>
           <ul class="rows">
             <li><span class="rows__name">Download the APK from Releases</span></li>
             <li><span class="rows__name">Allow installs from that app</span></li>
             <li><span class="rows__name">Open the app and sign in</span></li>
           </ul>
           <div class="btn-row"><a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the Android app</a></div>
+        </article>
+        <article class="card card--row">
+          <span class="ic-tile ic-tile--40"><svg class="ic ic-svg ic-40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="PC"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></span>
+          <h3>Windows PCs</h3>
+          <p>For Windows 10 and 11, 64-bit. A 43 MB setup that needs no administrator rights, or a portable zip. Tested on one PC so far.</p>
+          <ul class="rows">
+            <li><span class="rows__name">Download the setup from Releases</span></li>
+            <li><span class="rows__name">At the SmartScreen warning, choose More info, then Run anyway</span></li>
+            <li><span class="rows__name">Open Origin from the Start menu and sign in</span></li>
+          </ul>
+          <div class="btn-row"><a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the Windows app</a></div>
         </article>
       </div>
     </div>
@@ -248,7 +259,7 @@
     <div class="closing__cta close--type">
       <div class="section-head">
         <h2 id="close-h">Download Origin</h2>
-        <p>Free on LG webOS and Android, with updates from inside the app.</p>
+        <p>Free on LG webOS, Android and Windows, with updates from inside the app.</p>
       </div>
       <a class="btn btn--primary btn--xl btn--wide" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
