@@ -15,18 +15,18 @@
       "shortDescription": "Stremio and Nuvio accounts on your LG TV: artwork, trailers, the best stream in one press, subtitles, torrents. Unofficial.",
       "manifest": {
         "id": "tv.stremioorigin.app",
-        "version": "2.1.6",
+        "version": "2.1.7",
         "type": "native",
         "title": "Origin",
         "appDescription": "Stremio and Nuvio accounts on your LG TV: artwork, trailers, the best stream in one press, subtitles, torrents. Unofficial.",
         "iconUri": "https://betterstremio.github.io/webos/icon.png",
         "sourceUrl": "https://github.com/betterstremio/origin",
         "rootRequired": false,
-        "ipkUrl": "https://github.com/betterstremio/origin/releases/download/v2.1.6/tv.stremioorigin.app_2.1.6_arm.ipk",
+        "ipkUrl": "https://github.com/betterstremio/origin/releases/download/v2.1.7/tv.stremioorigin.app_2.1.7_arm.ipk",
         "ipkHash": {
-          "sha256": "383d34db425ae4dea4417777cad48cd29aa05062e1b7cc7d6500ee63793ecdeb"
+          "sha256": "f9ebda6e718c072557108c1a8877827a2755fa539e28433ca1016d0485e97955"
         },
-        "releaseNotes": "A fix for Android TV: the app opens again after you leave it with Back.\n\n**Android**\n- After you exited with Back twice, the app would not open again (a black screen, then back to the home screen) until you cleared its data or reinstalled it. Every launch now starts clean, and you stay signed in. Thanks to G8QR for the reports (#1)\n\nThis is an independent, unofficial app. It is not affiliated with or endorsed by Stremio or Nuvio.\n\nUpdates: Settings > About offers 2.1.6.\n"
+        "releaseNotes": "Origin now runs on Android phones and tablets, as a beta.\n\n**Which file to download**\n- Android phones and tablets: `tv.stremioorigin.app_2.1.7_android-phone-beta.apk`\n- Android TV, Google TV and most TV boxes: `tv.stremioorigin.app_2.1.7_android-arm64.apk`\n- Fire TV sticks and older boxes: `tv.stremioorigin.app_2.1.7_android-armv7.apk` (`_android.apk` holds both CPU types)\n- LG webOS: `tv.stremioorigin.app_2.1.7_arm.ipk`\n- Windows: `tv.stremioorigin.app_2.1.7_windows_setup.exe`, or the portable zip\n\n**Phones and tablets (beta)**\n- The phone file is the same app as the TV one. On a phone it opens upright with its own touch screens.\n- Home and Discover show all their rows; swipe a row sideways. Tap a title to open it, or a Continue Watching card to pick up where you left off. Hold a title to open a bigger card that plays its preview.\n- Title pages have Play, the streams list, seasons and episodes. Search uses the phone's keyboard. Library, Settings and Nuvio profiles have phone layouts too.\n- Films turn the phone sideways and fill the screen. Tap to show the controls. Double-tap the left or right side to skip 10 seconds, or drag the bar. The film pauses when you leave the app.\n- Sign in with your browser on the same phone, or with your email.\n- Missing so far: reviews, More like this, right-to-left languages, and translations of the new phone text. It has been tested on few phones, so please report anything that looks wrong or feels slow.\n\n**Android TV**\n- A film started soon after a preview could stay silent for a few seconds if you had left the app while the preview played. Fixed.\n\nThis is an independent, unofficial app. It is not affiliated with or endorsed by Stremio or Nuvio.\n\nUpdates: Settings > About offers 2.1.7.\n"
       }
     }
   ]
