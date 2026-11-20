@@ -1,15 +1,15 @@
 {
   "id": "tv.stremioorigin.app",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "type": "native",
   "title": "Origin",
   "appDescription": "Stremio and Nuvio accounts on your LG TV: artwork, trailers, the best stream in one press, subtitles, torrents. Unofficial.",
   "iconUri": "https://betterstremio.github.io/webos/icon.png",
   "sourceUrl": "https://github.com/betterstremio/origin",
   "rootRequired": false,
-  "ipkUrl": "https://github.com/betterstremio/origin/releases/download/v3.0.5/io.github.betterstremio.origin_3.0.5_arm.ipk",
+  "ipkUrl": "https://github.com/betterstremio/origin/releases/download/v3.0.6/io.github.betterstremio.origin_3.0.6_arm.ipk",
   "ipkHash": {
-    "sha256": "5b46321bd4a703ea3574cf44661280b42b0cde06991e869433a127dd34da1900"
+    "sha256": "f69b857f8b5d121f22ea7b2da227821eeb990dd55f730fc3ab0009f48e3c1c9a"
   },
-  "releaseNotes": "Smoother browsing on 4K Android TVs. Phones, 1080p TVs and boxes, webOS, Windows and Samsung are unchanged.\n\n**Which file to download**\n- Android phones and tablets: `io.github.betterstremio.origin_3.0.5_android-phone-beta.apk`\n- Android TV, Google TV and most TV boxes: `io.github.betterstremio.origin_3.0.5_android-arm64.apk`\n- Fire TV sticks and older boxes: `io.github.betterstremio.origin_3.0.5_android-armv7.apk` (`_android.apk` holds both CPU types)\n- LG webOS: `io.github.betterstremio.origin_3.0.5_arm.ipk`\n- Windows: `io.github.betterstremio.origin_3.0.5_windows_setup.exe`, or the portable zip\n- Samsung TVs (preview): `io.github.betterstremio.origin_3.0.5_tizen-beta.tpk`\n- Mac (beta): stays on 3.0.2 for now, from the [3.0.2 release](https://github.com/betterstremio/origin/releases/tag/v3.0.2)\n\n**4K Android TVs**\n- On some 4K Google TVs, moving between posters on Home and My List dropped to about 2 frames a second while films played fine ([#19](https://github.com/betterstremio/origin/issues/19)). The app drew its menus at the panel's full 3840×2160, four times the pixels of 1080p, which is too much for the graphics chip in many TVs.\n- Menus are now drawn at 1920×1080 and scaled up by the TV, the same as on LG webOS. Films still play at full 4K.\n"
+  "releaseNotes": "Stream lists can show results sooner when many add-ons are installed. Slow add-ons spend less time holding up requests to faster ones, and the stream list and player’s Sources menu now support up to 128 add-ons. [Issue #18](https://github.com/betterstremio/origin/issues/18)\n\n**Which file to download**\n\n- Android phones and tablets use `io.github.betterstremio.origin_3.0.6_android-phone-beta.apk`.\n- Android TV, Google TV and most TV boxes use `io.github.betterstremio.origin_3.0.6_android-arm64.apk`.\n- Fire TV sticks and older boxes use `io.github.betterstremio.origin_3.0.6_android-armv7.apk`. The `_android.apk` includes both CPU types.\n- LG webOS uses `io.github.betterstremio.origin_3.0.6_arm.ipk`.\n- Windows uses `io.github.betterstremio.origin_3.0.6_windows_setup.exe` or the portable zip.\n- Samsung TVs (preview) use `io.github.betterstremio.origin_3.0.6_tizen-beta.tpk`.\n- The Mac beta is available from the [3.0.2 release](https://github.com/betterstremio/origin/releases/tag/v3.0.2).\n"
 }
