@@ -218,32 +218,116 @@
   }, { passive: true });
   updatePosition();
 
+  const speed = document.querySelector('[data-count-from]');
+  let countFrame;
+  function countDown() {
+    const from = +speed.dataset.countFrom;
+    const to = 150;
+    let start;
+    const tick = now => {
+      if (start === undefined) start = now;
+      if (reduced.matches) { speed.textContent = to + ' MB'; return; }
+      const t = Math.min((now - start) / 900, 1);
+      speed.textContent = Math.round(from + (to - from) * (1 - (1 - t) ** 3)) + ' MB';
+      countFrame = t < 1 ? requestAnimationFrame(tick) : undefined;
+    };
+    speed.textContent = from + ' MB';
+    countFrame = requestAnimationFrame(tick);
+  }
+  const onMotionChange = () => {
+    if (!reduced.matches || countFrame === undefined) return;
+    cancelAnimationFrame(countFrame);
+    countFrame = undefined;
+    speed.textContent = '150 MB';
+  };
+  // Safari before 14 only has addListener.
+  if (reduced.addEventListener) reduced.addEventListener('change', onMotionChange);
+  else reduced.addListener(onMotionChange);
+
+  const playOnce = (el, cls, name, delay) => {
+    if (delay !== undefined) el.style.setProperty('--i', delay);
+    el.classList.add(cls);
+    // Pseudo-element animations bubble here too: wait for the named one. A cancel
+    // (reduced motion switched on mid-way) also ends it, so it never replays.
+    const done = event => {
+      if (event.animationName !== name) return;
+      el.removeEventListener('animationend', done);
+      el.removeEventListener('animationcancel', done);
+      el.classList.remove(cls);
+    };
+    el.addEventListener('animationend', done);
+    el.addEventListener('animationcancel', done);
+  };
+
   if ('IntersectionObserver' in window) {
-    // Below-fold images get one light-up as their frames enter view. Content is visible by default.
-    const frames = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio < .25) return;
-        const frame = entry.target;
-        frames.unobserve(frame);
-        if (reduced.matches) return;
-        frame.classList.add('is-revealing');
-        frame.addEventListener('animationend', () => frame.classList.remove('is-revealing'), { once: true });
-      });
-    }, { threshold: .25 });
-    document.querySelectorAll('.stats, .pair .shot, .duo .shot, .shot--video').forEach(frame => {
-      if (frame.getBoundingClientRect().top >= innerHeight) frames.observe(frame);
+    const below = el => el.getBoundingClientRect().top >= innerHeight;
+    // Calls back once per target as it crosses a line `lift` of the viewport height
+    // above the bottom (in px: percentage margins resolve against the width).
+    const watch = (targets, lift, threshold, onEnter) => {
+      const margin = '0px 0px -' + Math.round(innerHeight * lift) + 'px 0px';
+      const observer = new IntersectionObserver(entries => {
+        const entering = entries.filter(entry => entry.isIntersecting && entry.intersectionRatio >= threshold);
+        entering.forEach((entry, batch) => {
+          observer.unobserve(entry.target);
+          onEnter(entry.target, batch);
+        });
+      }, { rootMargin: margin, threshold });
+      targets.forEach(target => observer.observe(target));
+    };
+    // The measurements: the rules draw and the memory figure counts down.
+    const stats = document.querySelector('.stats');
+    if (below(stats)) watch([stats], .2, .25, () => {
+      if (reduced.matches) return;
+      playOnce(stats, 'is-revealing', 'rule-in');
+      countDown();
     });
+
+    // Screenshots wait dimmed below the fold and the lamp comes up as they enter,
+    // so a picture already on screen never darkens.
+    const shots = [...document.querySelectorAll('.pair .shot, .duo .shot, .shot--video')].filter(below);
+    if (!reduced.matches) shots.forEach(shot => shot.classList.add('is-dim'));
+    watch(shots, .04, 0, shot => {
+      shot.classList.remove('is-dim');
+      if (!reduced.matches) playOnce(shot, 'is-revealing', 'lamp');
+    });
+
+    // Download rows: an amber pass along each row's rule as it comes up; rows
+    // entering together follow each other.
+    const rows = [...document.querySelectorAll('.sched .row')].filter(below);
+    watch(rows, .12, 0, (row, batch) => {
+      if (!reduced.matches) playOnce(row, 'is-scanning', 'line-pass', Math.min(batch, 4));
+    });
+
+    // The footer wordmark is decorative: it waits clipped and feeds in from the left.
+    const wordmark = document.querySelector('.bigmark img');
+    if (below(wordmark)) {
+      if (!reduced.matches) wordmark.classList.add('is-waiting');
+      watch([wordmark], .1, 0, () => {
+        wordmark.classList.remove('is-waiting');
+        // A jump that lands with the mark well in view shows it as it is.
+        if (!reduced.matches && wordmark.getBoundingClientRect().top > innerHeight * .6) playOnce(wordmark, 'is-wiping', 'wipe');
+      });
+    }
   }
 
   const film = document.querySelector('.film__image');
   const photo = film.querySelector('img');
   const leader = film.querySelector('.film__leader');
 
+  const edges = [...document.querySelectorAll('.film__edge')];
+  edges.forEach(edge => {
+    const feed = document.createElement('span');
+    feed.className = 'film__feed';
+    feed.setAttribute('aria-hidden', 'true');
+    edge.append(feed);
+  });
+
   function openFilm() {
     const rect = film.getBoundingClientRect();
     if (reduced.matches || document.hidden || rect.bottom <= 0 || rect.top >= innerHeight) return;
     leader.classList.add('is-playing');
     leader.addEventListener('animationend', () => leader.classList.remove('is-playing'), { once: true });
+    edges.forEach(edge => playOnce(edge, 'is-feeding', 'corners-back'));
   }
 
   if (!reduced.matches) {
