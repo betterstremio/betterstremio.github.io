@@ -1,213 +1,321 @@
 <!doctype html>
-<!-- type: software. deal: hero product (owner: Home screenshot under a head row), nav-centre (dealt nav-cards: panels of extra images cost weight), footer-dark (data-tone dark), close-word, rhythm surface-pairs (accounts + video), buttons tonal, mark: the wordmark, moment marquee-row (speed), palette: the client's own (brand), type: Onest self-hosted -->
-<html lang="en" data-type="software" data-radius="soft" data-buttons="tonal" data-motion data-tone="dark">
+<!-- Release edits: the version "3.0.2" and the file sizes appear in the hero release line, device picker, download list and footer. -->
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Origin: a fast app for Stremio and Nuvio on TVs, Android and Windows</title>
+<title>Origin — A fast, native streaming app</title>
 <meta name="description" content="Origin is a free, open-source native app for your own Stremio and Nuvio accounts and addons. It runs on LG webOS, Android TV, Fire TV, Android phones and Windows.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Origin: a fast app for Stremio and Nuvio on TVs, Android and Windows">
+<meta property="og:title" content="Origin — A fast, native streaming app">
 <meta property="og:description" content="A free, open-source native app, written in C, for your own Stremio and Nuvio accounts and addons.">
 <meta property="og:image" content="https://betterstremio.github.io/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.png" type="image/png">
 <meta name="theme-color" content="#121214">
 <link rel="canonical" href="https://betterstremio.github.io/">
-<meta name="site-kind" content="software">
-<meta name="page-type" content="software">
 <link rel="preload" href="fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/motion/motion.css">
 <link rel="stylesheet" href="assets/site.css">
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
 </head>
 <body>
-<header class="nav nav--centre">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top" aria-label="Origin, top of the page"><svg class="wm" viewBox="25 17 303 110" height="30" width="83" role="img" aria-label="Origin"><circle cx="60.6" cy="60.6" r="28.6" fill="none" stroke="currentColor" stroke-width="14"/><text x="98.7" y="96" font-family="Onest, sans-serif" font-weight="700" font-size="100" fill="currentColor">rigin</text></svg></a>
-    <nav class="nav__links" aria-label="Main">
-      <div class="nav__item"><a class="nav__link" href="#speed">Speed</a></div>
-      <div class="nav__item"><a class="nav__link" href="#tabs">Tabs</a></div>
-      <div class="nav__item"><a class="nav__link" href="#accounts">Accounts</a></div>
-      <div class="nav__item"><a class="nav__link" href="#video">Video</a></div>
-      <div class="nav__item"><a class="nav__link" href="#upgrade">Upgrade</a></div>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav__bar">
+    <a class="nav__logo" href="#top" aria-label="Origin, top of the page"><img class="wm" src="assets/wordmark.svg" width="2586" height="1002" alt=""></a>
+    <nav class="nav__links" id="nav-links" aria-label="Main">
+      <a href="#speed">Speed</a>
+      <a href="#tour">Tour</a>
+      <a href="#accounts">Accounts</a>
+      <a href="#upgrade">Upgrade</a>
     </nav>
-    <div class="nav__actions"><a class="btn btn--primary" href="#download">Download the app</a></div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+    <a class="btn btn--primary nav__cta" href="#pick">Get Origin</a>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
       <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
     </button>
   </div>
 </header>
-<main id="top">
-  <section class="hero hero--product" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text hero__in">
-      <div class="hero-brand"><p class="hero-notice">Version 3.0.2 · Free and open source under GPL-3.0</p></div>
-      <div class="hero__head">
-        <div>
-          <h1 id="hero-h">A fast app for Stremio and Nuvio on TV</h1>
-          <p class="hero__lead">Free, native app for your own Stremio and Nuvio accounts and addons, on LG, Android TV, Fire TV, Windows and phones. The LG package is 5.5 MB.</p>
-        </div>
-        <div class="btn-row"><a class="btn btn--primary" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#video">Watch the video</a></div>
+
+<main id="main">
+  <!-- Release update: the version and file names/sizes appear in the hero, the picker (#pick), the install list (#get) and the footer. Change them together. The 2.0.0 video and upgrade versions are history: leave them. -->
+  <section class="hero wrap" id="top" aria-labelledby="hero-h">
+    <div class="hero__opening">
+      <div class="hero__intro">
+        <h1 id="hero-h">Origin</h1>
+        <p class="hero__lead">A fast, native streaming app for your TV, phone and Windows PC.</p>
+        <p class="hero__release">Version <strong>3.0.2</strong> · Free · Open source · <span class="license">GPL-3.0</span></p>
       </div>
-      <div class="hero__stage"><picture><source media="(max-width: 639px)" type="image/avif" srcset="media/v3/phone-412.avif 412w, media/v3/phone-824.avif 824w" sizes="100vw"><source media="(max-width: 639px)" type="image/webp" srcset="media/v3/phone-412.webp 412w, media/v3/phone-824.webp 824w" sizes="100vw"><source type="image/avif" srcset="media/v3/home-640.avif 640w, media/v3/home-1280.avif 1280w, media/v3/home-1920.avif 1920w" sizes="100vw"><source type="image/webp" srcset="media/v3/home-640.webp 640w, media/v3/home-1280.webp 1280w, media/v3/home-1920.webp 1920w" sizes="100vw"><img src="media/v3/home-1280.webp" width="1920" height="1080" alt="The Origin Home screen on a TV: a billboard for Eleanor the Great, then the Continue Watching row." fetchpriority="high" decoding="async"></picture></div>
-    </div></div>
+      <figure class="film">
+        <div class="film__stock">
+          <div class="film__edge" aria-hidden="true"></div>
+          <div class="film__image">
+            <picture>
+              <source type="image/avif" srcset="media/v3/home-640.avif 640w, media/v3/home-1280.avif 1280w, media/v3/home-1920.avif 1920w" sizes="(min-width: 1440px) 740px, (min-width: 900px) 53vw, 90vw">
+              <source type="image/webp" srcset="media/v3/home-640.webp 640w, media/v3/home-1280.webp 1280w, media/v3/home-1920.webp 1920w" sizes="(min-width: 1440px) 740px, (min-width: 900px) 53vw, 90vw">
+              <img src="media/v3/home-1280.webp" width="1920" height="1080" alt="The Origin Home screen with a billboard and rows of posters." fetchpriority="high">
+            </picture>
+            <span class="film__leader" aria-hidden="true"></span>
+          </div>
+          <div class="film__edge" aria-hidden="true"></div>
+        </div>
+        <figcaption><strong>About 0.5 s</strong> to the first row of pictures after Home opens on an LG C1.</figcaption>
+      </figure>
+    </div>
+
+    <div class="office" id="pick">
+      <fieldset class="picker" data-picker>
+        <legend>What are you installing on?</legend>
+        <div class="picker__opts">
+          <input type="radio" name="device" id="d-lg" value="lg"><label for="d-lg">LG TV</label>
+          <input type="radio" name="device" id="d-android" value="android"><label for="d-android">Android, Google &amp; Fire TV</label>
+          <input type="radio" name="device" id="d-windows" value="windows"><label for="d-windows">Windows</label>
+          <input type="radio" name="device" id="d-phone" value="phone"><label for="d-phone">Android phone (beta)</label>
+          <input type="radio" name="device" id="d-samsung" value="samsung"><label for="d-samsung">Samsung TV (preview)</label>
+        </div>
+      </fieldset>
+      <div class="panels" aria-live="polite">
+        <div class="panels__empty" hidden><p>Pick your device to get its file.</p><a class="btn btn--primary" href="#get">See every download</a></div>
+        <div class="panel" data-device="lg">
+          <p class="panel__name">LG webOS</p>
+          <dl>
+            <div><dt>Needs</dt><dd>webOS 3 or later</dd></div>
+            <div><dt>Install</dt><dd><p>Easiest: in the Homebrew Channel’s Settings add <code>https:/<wbr>/<wbr>betterstremio.github.io/<wbr>webos/<wbr>apps.json</code>, then install Origin from its list.</p><p>Or, in Developer Mode, install <code>io.github.betterstremio.origin_3.0.2_<wbr>arm.ipk</code> (5.5 MB).</p></dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+        <div class="panel" data-device="android">
+          <p class="panel__name">Android TV, Google TV and Fire TV</p>
+          <dl>
+            <div><dt>Needs</dt><dd>Android 7.0 or later</dd></div>
+            <div><dt>Install</dt><dd><p>Most TVs and boxes: <code>io.github.betterstremio.origin_3.0.2_<wbr>android-arm64.apk</code> (7.3 MB).</p><p>Fire TV sticks and older boxes: <code>io.github.betterstremio.origin_3.0.2_<wbr>android-armv7.apk</code> (6.9 MB).</p><p>The Downloader app can fetch the file.</p></dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+        <div class="panel" data-device="windows">
+          <p class="panel__name">Windows</p>
+          <dl>
+            <div><dt>Needs</dt><dd>Windows 10 or 11, 64-bit</dd></div>
+            <div><dt>Install</dt><dd><p><code>io.github.betterstremio.origin_3.0.2_<wbr>windows_setup.exe</code> (44.9 MB, no admin prompt) or <code>io.github.betterstremio.origin_3.0.2_<wbr>windows_portable.zip</code> (59.7 MB).</p><p>The files are not code-signed, so SmartScreen says unknown publisher: choose More info, then Run anyway.</p></dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+        <div class="panel" data-device="phone">
+          <p class="panel__name">Android phones and tablets, beta</p>
+          <dl>
+            <div><dt>Needs</dt><dd>Android 7.0 or later</dd></div>
+            <div><dt>File</dt><dd><code>io.github.betterstremio.origin_3.0.2_<wbr>android-phone-beta.apk</code> (11.8 MB). It is a beta.</dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+        <div class="panel" data-device="samsung">
+          <p class="panel__name">Samsung TVs, preview</p>
+          <dl>
+            <div><dt>Needs</dt><dd>Tizen 4 or later</dd></div>
+            <div><dt>Install</dt><dd><p><code>io.github.betterstremio.origin_3.0.2_<wbr>tizen-beta.tpk</code> (7.4 MB), installed with Apps2Samsung in Developer Mode. It has not yet been run on a Samsung TV.</p></dd></div>
+          </dl>
+          <div class="panel__actions"><a class="btn btn--primary" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a><a class="quiet" href="https://github.com/betterstremio/origin/blob/main/docs/tizen.md">Read the Samsung guide</a></div>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+      </div>
+      <p class="office__note">Origin needs a Stremio or Nuvio account. Addons you add list titles and return stream links. Origin ships empty and plays the links your addons return.</p>
+    </div>
   </section>
 
   <section class="section" id="speed" aria-labelledby="speed-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="speed-h">A fast app that uses little memory</h2></div>
-      <div class="grid facts">
-        <div class="span-4"><p class="t-stat">5.5 MB</p><p>The LG package is 5.5 MB.</p></div>
-        <div class="span-4"><p class="t-stat">0.5 s</p><p>On an LG C1, Home’s first row of pictures is ready about half a second after Home opens.</p></div>
-        <div class="span-4"><p class="t-stat">300 to 150 MB</p><p>Posters stay compressed in memory. On the same TV, peak memory in our poster test fell from about 300 MB to about 150 MB in 3.0.0.</p></div>
+      <div class="head head--row">
+        <h2 id="speed-h">A fast app that uses little memory</h2>
+        <p>Every screen is drawn by the app itself in C, with no browser engine inside. Rows fetch their titles only as you get near them.</p>
       </div>
-      <div class="grid facts facts--text">
-        <div class="span-5"><h3>The app is written in C</h3><p>Every screen is drawn by the app itself in C, with no browser engine inside.</p></div>
-        <div class="span-7 start-6"><h3>The app fetches titles late</h3><p>Rows fetch their titles only as you get near them.</p></div>
+      <ul class="stats">
+        <li><strong>150 MB</strong><span>Peak memory in our 3.0.0 poster test on an LG C1, down from about 300 MB. Posters stay compressed in memory.</span></li>
+        <li><strong>5.5 MB</strong><span>LG webOS package</span></li>
+      </ul>
+      <p class="runs"><span class="visually-hidden">Runs on: </span>LG webOS<i></i>Android TV<i></i>Google TV<i></i>Fire TV<i></i>Android phones<i></i>Windows<i></i>Samsung TV (preview)</p>
+    </div>
+  </section>
+
+  <section class="section band" id="tour" aria-labelledby="tour-h">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="tour-h">The tabs in the app</h2>
+        <p>Home, Shows, Movies, Anime, Catalogue and My List. Shows and Movies can use For You: about 36 rows built from what you watch, which needs your own free TMDB key.</p>
       </div>
-      <div class="runs">
-        <p class="t-label muted">Runs on</p>
-        <div data-moment="marquee-row" data-moment-opts='{"speed": 32}'><ul class="mo-mq__track"><li>LG webOS</li><li>Android TV</li><li>Google TV</li><li>Fire TV</li><li>Android phones</li><li>Windows</li><li>Samsung TV</li></ul></div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Tabs in the app">
+        <button type="button" role="tab" id="tab-shows" aria-controls="tp-shows" aria-selected="true"><span>Shows</span></button>
+        <button type="button" role="tab" id="tab-movies" aria-controls="tp-movies" aria-selected="false" tabindex="-1"><span>Movies</span></button>
+        <button type="button" role="tab" id="tab-anime" aria-controls="tp-anime" aria-selected="false" tabindex="-1"><span>Anime</span></button>
+        <button type="button" role="tab" id="tab-catalogue" aria-controls="tp-catalogue" aria-selected="false" tabindex="-1"><span>Catalogue</span></button>
+      </div>
+      <div class="tabpanels">
+        <article class="tabpanel" id="tp-shows">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/shows-640.avif 640w, media/v3/shows-1280.avif 1280w, media/v3/shows-1920.avif 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/shows-640.webp 640w, media/v3/shows-1280.webp 1280w, media/v3/shows-1920.webp 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><img src="media/v3/shows-1280.webp" width="1920" height="1080" alt="The Shows tab: a billboard, then rows such as Watch again and Binge-worthy." loading="lazy" decoding="async"></picture></div>
+          <div class="cap"><h3>Shows tab</h3><p>A billboard, then rows picked for you, such as Watch again and Binge-worthy.</p></div>
+        </article>
+        <article class="tabpanel" id="tp-movies">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/movies-640.avif 640w, media/v3/movies-1280.avif 1280w, media/v3/movies-1920.avif 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/movies-640.webp 640w, media/v3/movies-1280.webp 1280w, media/v3/movies-1920.webp 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><img src="media/v3/movies-1280.webp" width="1920" height="1080" alt="The Movies tab: a billboard, then rows of films." loading="lazy" decoding="async"></picture></div>
+          <div class="cap"><h3>Movies tab</h3><p>The same layout for films. Without For You you get Cinemeta’s rows.</p></div>
+        </article>
+        <article class="tabpanel" id="tp-anime">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/anime-640.avif 640w, media/v3/anime-1280.avif 1280w, media/v3/anime-1920.avif 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/anime-640.webp 640w, media/v3/anime-1280.webp 1280w, media/v3/anime-1920.webp 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><img src="media/v3/anime-1280.webp" width="1920" height="1080" alt="The Anime tab: rows of anime titles." loading="lazy" decoding="async"></picture></div>
+          <div class="cap"><h3>Anime tab</h3><p>Off until you turn it on in Settings, Appearance. Its rows come from AniList.</p></div>
+        </article>
+        <article class="tabpanel" id="tp-catalogue">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/catalogue-640.avif 640w, media/v3/catalogue-1280.avif 1280w, media/v3/catalogue-1920.avif 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/catalogue-640.webp 640w, media/v3/catalogue-1280.webp 1280w, media/v3/catalogue-1920.webp 1920w" sizes="(min-width:1440px) 940px, (min-width:1024px) calc(75vw - 100px), calc(100vw - 48px)"><img src="media/v3/catalogue-1280.webp" width="1920" height="1080" alt="The Catalogue tab: your collections and the catalogues your addons offer." loading="lazy" decoding="async"></picture></div>
+          <div class="cap"><h3>Catalogue tab</h3><p>Your collections and every catalogue your addons offer.</p></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section g2" id="tabs" style="--hm: 1" aria-labelledby="tabs-h">
+  <section class="section" id="details" aria-labelledby="details-h">
     <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="tabs-h">Five tabs in the app</h2>
-          <p>Home, Shows, Movies, Anime and Catalogue. Shows and Movies can use For You: about 36 rows built from what you watch, which needs your own free TMDB key.</p>
-        </div>
-        <div class="grid">
-          <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/shows-640.avif 640w, media/v3/shows-1280.avif 1280w, media/v3/shows-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/shows-640.webp 640w, media/v3/shows-1280.webp 1280w, media/v3/shows-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/shows-1280.webp" width="1920" height="1080" alt="The Shows tab: a billboard, then rows such as Watch again and Binge-worthy." loading="lazy" decoding="async"></picture></div><h3>Shows tab</h3><p>A billboard, then rows picked for you, such as Watch again and Binge-worthy.</p></article>
-          <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/movies-640.avif 640w, media/v3/movies-1280.avif 1280w, media/v3/movies-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/movies-640.webp 640w, media/v3/movies-1280.webp 1280w, media/v3/movies-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/movies-1280.webp" width="1920" height="1080" alt="The Movies tab: a billboard, then rows of films." loading="lazy" decoding="async"></picture></div><h3>Movies tab</h3><p>The same layout for films. Without For You you get Cinemeta’s rows.</p></article>
-        </div>
-      </div>
-      <div class="grid">
-        <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/anime-640.avif 640w, media/v3/anime-1280.avif 1280w, media/v3/anime-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/anime-640.webp 640w, media/v3/anime-1280.webp 1280w, media/v3/anime-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/anime-1280.webp" width="1920" height="1080" alt="The Anime tab: rows of anime titles." loading="lazy" decoding="async"></picture></div><h3>Anime tab</h3><p>Off until you turn it on in Settings, Appearance. Its rows come from AniList.</p></article>
-        <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/catalogue-640.avif 640w, media/v3/catalogue-1280.avif 1280w, media/v3/catalogue-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/catalogue-640.webp 640w, media/v3/catalogue-1280.webp 1280w, media/v3/catalogue-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/catalogue-1280.webp" width="1920" height="1080" alt="The Catalogue tab: your collections and the catalogues your addons offer." loading="lazy" decoding="async"></picture></div><h3>Catalogue tab</h3><p>Your collections and every catalogue your addons offer.</p></article>
+      <div class="head"><h2 id="details-h">Preview cards and details</h2></div>
+      <div class="pair">
+        <figure class="pair__a">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/card-640.avif 640w, media/v3/card-1280.avif 1280w, media/v3/card-1920.avif 1920w" sizes="(min-width:1024px) 737px, calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/card-640.webp 640w, media/v3/card-1280.webp 1280w, media/v3/card-1920.webp 1920w" sizes="(min-width:1024px) 737px, calc(100vw - 48px)"><img src="media/v3/card-1280.webp" width="1920" height="1080" alt="A title card opened wide in a row, with its preview playing." loading="lazy" decoding="async"></picture></div>
+          <figcaption><h3>Preview cards</h3><p>Rest on a card and it opens wide. A short clip or trailer from IMDb plays in it, or you can turn previews off.</p></figcaption>
+        </figure>
+        <figure class="pair__b">
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/details-640.avif 640w, media/v3/details-1280.avif 1280w, media/v3/details-1920.avif 1920w" sizes="(min-width:1024px) 737px, calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/details-640.webp 640w, media/v3/details-1280.webp 1280w, media/v3/details-1920.webp 1920w" sizes="(min-width:1024px) 737px, calc(100vw - 48px)"><img src="media/v3/details-1280.webp" width="1920" height="1080" alt="A title’s details page with its cast and reviews." loading="lazy" decoding="async"></picture></div>
+          <figcaption><h3>Cast and reviews</h3><p>Open a title to see its details, its cast and its reviews.</p></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="section g2" id="details" style="--hm: 1" aria-labelledby="details-h">
+  <section class="section band" id="accounts" aria-labelledby="accounts-h">
     <div class="wrap">
-      <div class="group">
-        <div class="section-head"><h2 id="details-h">Preview cards and details in the app</h2></div>
-        <div class="grid grid--top">
-          <div class="span-5 stack-4"><h3>Preview cards in the app</h3><p>Rest on a card and it opens wide. A short clip or trailer from IMDb plays in it, or you can turn previews off.</p></div>
-          <div class="span-7 start-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/card-640.avif 640w, media/v3/card-1280.avif 1280w, media/v3/card-1920.avif 1920w" sizes="(min-width: 1024px) 737px, calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/card-640.webp 640w, media/v3/card-1280.webp 1280w, media/v3/card-1920.webp 1920w" sizes="(min-width: 1024px) 737px, calc(100vw - 48px)"><img src="media/v3/card-1280.webp" width="1920" height="1080" alt="A title card opened wide in a row, with its preview playing." loading="lazy" decoding="async"></picture></div></div>
-        </div>
-      </div>
-      <div class="grid grid--top">
-        <div class="span-5 stack-4"><h3>Cast and reviews</h3><p>Open a title to see its details, its cast and its reviews.</p></div>
-        <div class="span-7 start-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/details-640.avif 640w, media/v3/details-1280.avif 1280w, media/v3/details-1920.avif 1920w" sizes="(min-width: 1024px) 737px, calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/details-640.webp 640w, media/v3/details-1280.webp 1280w, media/v3/details-1920.webp 1920w" sizes="(min-width: 1024px) 737px, calc(100vw - 48px)"><img src="media/v3/details-1280.webp" width="1920" height="1080" alt="A title’s details page with its cast and reviews." loading="lazy" decoding="async"></picture></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section ground-surface" id="accounts" aria-labelledby="accounts-h">
-    <div class="wrap">
-      <div class="section-head">
+      <div class="head">
         <h2 id="accounts-h">Your accounts and profiles</h2>
-        <p>Origin ships empty: you bring your own account and addons. Sign in to Stremio or Nuvio with a QR code or email, or keep both signed in and switch under Settings, Account. Each keeps its own library and addons.</p>
+        <p>Stremio and Nuvio are streaming apps that use addons to find titles and streams. Origin ships empty: you bring your own account and addons. Sign in to either app with a QR code or email, or keep both signed in and switch under Settings, Account. Each keeps its own library and addons.</p>
       </div>
-      <div class="grid">
-        <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/profiles-640.avif 640w, media/v3/profiles-1280.avif 1280w, media/v3/profiles-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/profiles-640.webp 640w, media/v3/profiles-1280.webp 1280w, media/v3/profiles-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/profiles-1280.webp" width="1920" height="1080" alt="The profile picker with Nuvio profiles." loading="lazy" decoding="async"></picture></div><h3>Nuvio profiles with PIN locks</h3><p>Add a profile from the picker, up to Nuvio’s limit of 6.</p></article>
-        <article class="card card--open span-6"><div class="shot m-zoom"><picture><source type="image/avif" srcset="media/v3/profile-menu-640.avif 640w, media/v3/profile-menu-1280.avif 1280w, media/v3/profile-menu-1920.avif 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/profile-menu-640.webp 640w, media/v3/profile-menu-1280.webp 1280w, media/v3/profile-menu-1920.webp 1920w" sizes="(min-width: 1024px) 628px, (min-width: 640px) calc(50vw - 36px), calc(100vw - 48px)"><img src="media/v3/profile-menu-1280.webp" width="1920" height="1080" alt="The profile menu open from the picture in the top bar." loading="lazy" decoding="async"></picture></div><h3>Profile menu in the top bar</h3><p>Choose your picture in the top bar to change profile.</p></article>
+      <div class="duo">
+        <figure>
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/profiles-640.avif 640w, media/v3/profiles-1280.avif 1280w, media/v3/profiles-1920.avif 1920w" sizes="(min-width:1024px) 628px, (min-width:640px) calc(50vw - 72px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/profiles-640.webp 640w, media/v3/profiles-1280.webp 1280w, media/v3/profiles-1920.webp 1920w" sizes="(min-width:1024px) 628px, (min-width:640px) calc(50vw - 72px), calc(100vw - 48px)"><img src="media/v3/profiles-1280.webp" width="1920" height="1080" alt="The profile picker with Nuvio profiles." loading="lazy" decoding="async"></picture></div>
+          <figcaption><h3>Nuvio profiles with PIN locks</h3><p>Add a profile from the picker, up to Nuvio’s limit of 6.</p></figcaption>
+        </figure>
+        <figure>
+          <div class="shot"><picture><source type="image/avif" srcset="media/v3/profile-menu-640.avif 640w, media/v3/profile-menu-1280.avif 1280w, media/v3/profile-menu-1920.avif 1920w" sizes="(min-width:1024px) 628px, (min-width:640px) calc(50vw - 72px), calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/profile-menu-640.webp 640w, media/v3/profile-menu-1280.webp 1280w, media/v3/profile-menu-1920.webp 1920w" sizes="(min-width:1024px) 628px, (min-width:640px) calc(50vw - 72px), calc(100vw - 48px)"><img src="media/v3/profile-menu-1280.webp" width="1920" height="1080" alt="The profile menu open from the picture in the top bar." loading="lazy" decoding="async"></picture></div>
+          <figcaption><h3>Profile menu in the top bar</h3><p>Choose your picture in the top bar to change profile.</p></figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <section class="section ground-surface" id="video" aria-labelledby="video-h">
-    <div class="wrap">
-      <div class="grid grid--top">
-        <div class="span-5 section-head">
-          <h2 id="video-h">The 2.0.0 launch video</h2>
-          <p>This video is from version 2.0.0, when the app was called Better Stremio. It runs 78 seconds.</p>
+  <section class="section" id="video" aria-labelledby="video-h">
+    <div class="wrap video-grid">
+      <div class="head">
+        <h2 id="video-h">The 2.0.0 launch video</h2>
+        <p>This video is from version 2.0.0, when the app was called Better Stremio. It runs 78 seconds.</p>
+      </div>
+      <div class="shot shot--video"><video controls preload="none" poster="media/brag-poster.webp" width="1280" height="720" aria-label="Launch video for version 2.0.0, 78 seconds"><source src="media/brag.mp4" type="video/mp4"><track kind="captions" src="media/brag.en.vtt" srclang="en" label="English"></video></div>
+      <details class="video-transcript">
+        <summary>Read the video transcript</summary>
+        <div>
+          <p><strong>0:00</strong> Upbeat music plays. A couple sits on a couch. A TV loading spinner freezes and a skeleton holds the remote.</p>
+          <p>“You finally convinced your girlfriend to try Stremio. Or your boyfriend. We don’t judge. They pressed the down button once. And the TV took a moment to reflect on its life. Two minutes later, they’re back on Netflix. And honestly? Fair.”</p>
+          <p><strong>0:13</strong> A counter reads 169,000. Boxes show JavaScript inside a browser inside a TV. A Better Stremio title replaces them.</p>
+          <p>“Because on our TV, Stremio and Nuvio feel laggy. Nuvio’s TV app is 169,000 lines of JavaScript, inside a web browser, inside your television. Better Stremio has no browser. 25,000 lines of C, talking straight to the graphics chip. It’s built on Stremio Origin. And then we took some very heavy inspiration from everything your partner likes about Netflix.”</p>
+          <p><strong>0:33</strong> The app plays a preview in the Home billboard, opens a poster into a wide preview, then shows the Top 10 and Because You Watched rows.</p>
+          <p>“A giant billboard, with the movie already playing. Rest on a card, it opens wide and plays the actual film, past the boring credits. Top 10, with the big numbers, because humans love a leaderboard. Because You Watched, worked out on your own TV, not in somebody’s cloud.”</p>
+          <p><strong>0:48</strong> Feature names flash on screen and the app switches accent colours.</p>
+          <p>“One press picks the best stream. Skip intro. Skip recap. Subtitles that actually sync. Dolby Vision. And [bleep] DTS, converted right on the TV. 20 accent colours, for the person who needs the app to match the couch.”</p>
+          <p><strong>1:00</strong> Platform names fill the screen in turn. The couple sits together again.</p>
+          <p>“LG TVs. Android TV. Google TV. Fire TV. Phones. Free and open source. Nuvio, we borrowed your P2P engine. Thank you. We love you. Still laggy. Better Stremio. Bring your own addons. Keep your relationship.”</p>
+          <p><strong>1:14</strong> The end card shows betterstremio.github.io. It says the app is free and open source, built on Stremio Origin, and uses your own Stremio account and addons. It credits the demo profile and identifies the film scenes, sketches and voice as AI-generated. The music fades out.</p>
         </div>
-        <div class="span-7 start-6"><div class="shot shot--video"><video controls preload="none" poster="media/brag.jpg" width="1280" height="720" aria-label="Launch video for version 2.0.0, 78 seconds"><source src="media/brag.mp4" type="video/mp4"></video></div></div>
-      </div>
+      </details>
     </div>
   </section>
 
-  <section class="section" id="download" aria-labelledby="download-h">
+  <section class="section band" id="get" aria-labelledby="get-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="download-h">Download Origin 3.0.2</h2></div>
-      <div class="grid">
-          <article class="card span-6"><img class="dl-icon dl-icon--wide" src="assets/icons/lg.svg" alt="LG" width="40" height="40" loading="lazy"><h3>LG webOS</h3>
-            <p>webOS 3 or later. The package is a 5.5 MB .ipk.</p>
-            <ul class="rows"><li><span class="rows__name">Homebrew Channel</span><p>The easiest way. In its Settings add https://betterstremio.github.io/webos/apps.json, then install and update from there.</p></li><li><span class="rows__name">Developer Mode</span><p>Install the .ipk yourself.</p></li></ul>
-            <a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the LG package</a></article>
-          <article class="card span-6"><img class="dl-icon dl-icon--wide" src="assets/icons/android.svg" alt="Android" width="40" height="40" loading="lazy"><h3>Android TV, Google TV and Fire TV</h3>
-            <p>Android 7.0 or later.</p>
-            <ul class="rows"><li><span class="rows__name">arm64, 7.3 MB</span><p>For most devices.</p></li><li><span class="rows__name">armv7, 6.9 MB</span><p>For Fire TV sticks and older boxes.</p></li></ul>
-            <p>The Downloader app can fetch the file.</p>
-            <a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the Android TV APK</a></article>
+      <div class="head" id="download">
+        <h2 id="get-h">Download Origin 3.0.2</h2>
+        <p>Every file is on the latest GitHub release.</p>
       </div>
-    </div>
-  </section>
-  <section class="section" id="download-more" aria-labelledby="more-h">
-    <div class="wrap">
-      <div class="section-head"><h2 id="more-h">Download for phones, Windows and Samsung TVs</h2></div>
-      <div class="grid">
-        <article class="card card--phone span-4"><div class="shot shot--phone m-zoom"><picture><source type="image/avif" srcset="media/v3/phone-412.avif 412w, media/v3/phone-824.avif 824w" sizes="(min-width: 1024px) 410px, calc(100vw - 48px)"><source type="image/webp" srcset="media/v3/phone-412.webp 412w, media/v3/phone-824.webp 824w" sizes="(min-width: 1024px) 410px, calc(100vw - 48px)"><img src="media/v3/phone-824.webp" width="412" height="915" alt="Origin on an Android phone: Home with a billboard and rows of posters." loading="lazy" decoding="async"></picture></div><h3>Android phones and tablets, beta</h3>
-          <p>An 11.8 MB APK for phones and tablets. It is a beta.</p>
-          <a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the phone beta APK</a></article>
-        <article class="card span-4"><img class="dl-icon " src="assets/icons/windows.svg" alt="Windows" width="40" height="40" loading="lazy"><h3>Windows</h3>
-          <p>Windows 10 or 11, 64-bit. A 44.9 MB setup that needs no admin prompt, or a 59.7 MB portable zip.</p>
-          <p>The files are not code-signed, so SmartScreen says unknown publisher: choose More info, then Run anyway. Each file is scanned with Microsoft Defender.</p>
-          <a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the Windows installer</a></article>
-        <article class="card span-4"><img class="dl-icon dl-icon--wide dl-icon--samsung" src="assets/icons/samsung.svg" alt="Samsung" width="40" height="40" loading="lazy"><h3>Samsung TVs, preview</h3>
-          <p>Tizen 4 or later. A 7.4 MB .tpk, installed with Apps2Samsung in Developer Mode. It has not yet been run on a Samsung TV.</p>
-          <p>It builds on Stremio Origin’s Samsung port, which works best on TVs from about 2018 to 2020.</p>
-          <div class="btn-row"><a class="btn btn--secondary" href="https://github.com/betterstremio/origin/releases/latest">Get the Samsung package</a><a class="link" href="https://github.com/betterstremio/origin/blob/main/docs/tizen.md">Read the Samsung guide</a></div></article>
-      </div>
+      <div class="sched-head" aria-hidden="true"><span>Platform</span><span>Needs</span><span>Files</span><span>Install</span><span></span></div>
+      <ul class="sched">
+        <li class="row">
+          <div class="row__name"><img src="assets/icons/lg.svg" alt="" width="40" height="19" loading="lazy"><h3>LG webOS</h3></div>
+          <div><span class="lbl">Needs</span>webOS 3 or later</div>
+          <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>arm.ipk</code> (5.5 MB)</div>
+          <div><span class="lbl">Install</span>Easiest: in the Homebrew Channel’s Settings add <code>https:/<wbr>/<wbr>betterstremio.github.io/<wbr>webos/<wbr>apps.json</code>, then install Origin from its list. Or, in Developer Mode, install the .ipk.</div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+        <li class="row">
+          <div class="row__name"><img src="assets/icons/android.svg" alt="" width="40" height="40" loading="lazy"><h3>Android TV, Google TV and Fire TV</h3></div>
+          <div><span class="lbl">Needs</span>Android 7.0 or later</div>
+          <div><span class="lbl">Files</span>Most TVs and boxes: <code>io.github.betterstremio.origin_3.0.2_<wbr>android-arm64.apk</code> (7.3 MB).<br>Fire TV sticks and older boxes: <code>io.github.betterstremio.origin_3.0.2_<wbr>android-armv7.apk</code> (6.9 MB).</div>
+          <div><span class="lbl">Install</span>The Downloader app can fetch the file.</div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+        <li class="row" id="download-more">
+          <div class="row__name"><img src="assets/icons/android.svg" alt="" width="40" height="40" loading="lazy"><h3>Android phones and tablets, beta</h3></div>
+          <div><span class="lbl">Needs</span>Android 7.0 or later</div>
+          <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>android-phone-beta.apk</code> (11.8 MB). It is a beta.</div>
+          <div aria-hidden="true"></div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+        <li class="row">
+          <div class="row__name"><img src="assets/icons/windows.svg" alt="" width="40" height="40" loading="lazy"><h3>Windows</h3></div>
+          <div><span class="lbl">Needs</span>Windows 10 or 11, 64-bit</div>
+          <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>windows_setup.exe</code> (44.9 MB, no admin prompt)<br><code>io.github.betterstremio.origin_3.0.2_<wbr>windows_portable.zip</code> (59.7 MB)</div>
+          <div><span class="lbl">Install</span>The files are not code-signed, so SmartScreen says unknown publisher: choose More info, then Run anyway. Each file is scanned with Microsoft Defender.</div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+        <li class="row">
+          <div class="row__name"><img class="mark--samsung" src="assets/icons/samsung.svg" alt="" width="72" height="11" loading="lazy"><h3>Samsung TVs, preview</h3></div>
+          <div><span class="lbl">Needs</span>Tizen 4 or later</div>
+          <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>tizen-beta.tpk</code> (7.4 MB)</div>
+          <div><span class="lbl">Install</span>Installed with Apps2Samsung in Developer Mode. It has not yet been run on a Samsung TV. It builds on Stremio Origin’s Samsung port, which works best on TVs from about 2018 to 2020. <a class="quiet" href="https://github.com/betterstremio/origin/blob/main/docs/tizen.md">Read the Samsung guide</a></div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+      </ul>
     </div>
   </section>
 
   <section class="section" id="upgrade" aria-labelledby="upgrade-h">
     <div class="wrap">
-      <div class="grid grid--top">
-        <div class="span-5 section-head"><h2 id="upgrade-h">Coming from 2.x or Stremio Origin</h2><p>What you do depends on the version you have and the device.</p></div>
-        <div class="span-7 start-6 faq">
-          <div class="faq__item"><h3>Both apps on one TV</h3><p>From 3.0.0 the app id is io.github.betterstremio.origin, so Origin and Stremio Origin no longer replace each other and both can be on one TV.</p></div>
-          <div class="faq__item"><h3>Updating from 2.1.12</h3><p>The update installs the new app and opens it. On first start it copies your sign-in, profiles and settings from the old Origin, then removes the old app. Android asks once to confirm.</p></div>
-          <div class="faq__item"><h3>webOS on 2.1.11 or older</h3><p>3.0.0 installs beside the old app. Open it once and it imports the same way.</p></div>
-          <div class="faq__item"><h3>Android and Windows on 2.1.11 or older</h3><p>The app updates to 2.1.12 first, then to 3.0.0. Installing 3.0.0 by hand on Android means signing in again.</p></div>
-          <div class="faq__item"><h3>What the app imports</h3><p>Origin only imports from its own older versions. It never touches Stremio Origin’s data.</p></div>
-        </div>
+      <div class="head">
+        <h2 id="upgrade-h">Coming from 2.x or Stremio Origin</h2>
+        <p>What you do depends on the version you have and the device.</p>
+      </div>
+      <div class="faq">
+        <div><h3>Both apps on one TV</h3><p>From 3.0.0 the app id is io.github.betterstremio.origin, so Origin and Stremio Origin no longer replace each other and both can be on one TV.</p></div>
+        <div><h3>Updating from 2.1.12</h3><p>The update installs the new app and opens it. On first start it copies your sign-in, profiles and settings from the old Origin, then removes the old app. Android asks once to confirm.</p></div>
+        <div><h3>webOS on 2.1.11 or older</h3><p>3.0.0 installs beside the old app. Open it once and it imports the same way.</p></div>
+        <div><h3>Android and Windows on 2.1.11 or older</h3><p>The app updates to 2.1.12 first, then to 3.0.0. Installing 3.0.0 by hand on Android means signing in again.</p></div>
+        <div><h3>What the app imports</h3><p>Origin only imports from its own older versions. It never touches Stremio Origin’s data.</p></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+<footer class="footer">
   <div class="wrap">
-    <div class="closing__cta close--word">
-      <div class="section-head--split">
-        <div><h2 id="close-h">Get Origin 3.0.2</h2><p class="t-lead">Free, open source, GPL-3.0.</p></div>
-        <a class="btn btn--primary" href="#download">Download the app<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-      </div>
-      <p class="close__mark" aria-hidden="true"><svg class="wm wm--close" viewBox="25 17 303 110" height="180" width="496" role="img" aria-label="Origin"><circle cx="60.6" cy="60.6" r="28.6" fill="none" stroke="currentColor" stroke-width="14"/><text x="98.7" y="96" font-family="Onest, sans-serif" font-weight="700" font-size="100" fill="currentColor">rigin</text></svg></p>
+    <div class="footer__call">
+      <h2>Get Origin 3.0.2</h2>
+      <a class="btn btn--primary" href="#pick">Download the app</a>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-5 stack-4 footer__legalcopy">
-          <p>Stremio™ and Nuvio are the names of their owners. Origin is independent and unofficial, and is not affiliated with, endorsed by or sponsored by Stremio or Nuvio. The names only describe compatibility.</p>
-          <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-          <p>LG, Samsung and Android names and logos are trademarks of their owners.</p>
-          <p>Onest typeface, SIL Open Font License 1.1.</p>
-        </div>
-        <div class="span-7 start-6 footer__col"><h3>Project</h3><ul><li><a href="https://github.com/betterstremio/origin">Source</a></li><li><a href="https://github.com/betterstremio/origin/issues">Issues</a></li><li><a href="https://ko-fi.com/blueee123">Support</a></li></ul></div>
+    <p class="bigmark" aria-hidden="true"><img src="assets/wordmark.svg" width="2586" height="1002" alt=""></p>
+    <div class="legal">
+      <div class="legal__text">
+        <p>Stremio™ and Nuvio are the names of their owners. Origin is independent and unofficial, and is not affiliated with, endorsed by or sponsored by Stremio or Nuvio. The names only describe compatibility.</p>
+        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        <p>LG, Samsung and Android names and logos are trademarks of their owners.</p>
+        <p>Onest typeface, SIL Open Font License 1.1.</p>
       </div>
-      <div class="footer__legal"><span>© 2026 Origin, GPL-3.0</span></div>
+      <div class="legal__links"><h3>Project</h3><ul><li><a href="https://github.com/betterstremio/origin">Source</a></li><li><a href="https://github.com/betterstremio/origin/issues">Issues</a></li><li><a href="https://ko-fi.com/blueee123">Support</a></li></ul></div>
     </div>
+    <p class="copy">© 2026 Origin, GPL-3.0</p>
   </div>
 </footer>
-<script type="module" src="assets/site.js"></script><script type="module" src="assets/moments/moments.js"></script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

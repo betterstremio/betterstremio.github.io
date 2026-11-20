@@ -1,1 +1,261 @@
-function nav(){const t=document.querySelector(".nav"),n=t&&t.querySelector(".nav__toggle");if(!n)return;const d='<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',o='<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',a=e=>{t.classList.toggle("is-open",e),document.body.classList.toggle("nav-locked",e),n.setAttribute("aria-expanded",String(e)),n.innerHTML=e?o:d};n.addEventListener("click",()=>a(!t.classList.contains("is-open"))),document.addEventListener("keydown",e=>{e.key==="Escape"&&t.classList.contains("is-open")&&(a(!1),n.focus())}),t.addEventListener("click",e=>{t.classList.contains("is-open")&&e.target.closest&&e.target.closest("a[href]")&&a(!1)}),matchMedia("(min-width: 1024px)").addEventListener("change",e=>{e.matches&&a(!1)})}nav();const html=document.documentElement,reducedQ=matchMedia("(prefers-reduced-motion: reduce)"),reduced=()=>reducedQ.matches,shot=()=>/HeadlessChrome/.test(navigator.userAgent)&&html.dataset.motion!=="live",ENTER_MEDIA="[data-enter-media], .hero__bg, .hero__media, .hero__stage, .hero__art, .hero__window, .hero-visual, .ly-collage",ENTER_TEXT="h1 ~ *, :has(> h1) ~ *, :has(~ h1)",ENTER_LEAF="p, dl, ul, ol, a, button, img, picture, video, figure, blockquote, h2, h3, .pill, .btn";function maskWords(t){if(t.matches("[data-ly-letters], [data-enter-whole]")||t.querySelector(".ly-word, .ly-pic, .ly-mark, svg, img"))return null;const n=document.createDocumentFragment();n.append(...t.childNodes);const d=n.cloneNode(!0),o=[],a=c=>[...c.childNodes].forEach(l=>{if(l.nodeType===1)return a(l);if(l.nodeType!==3)return;const m=document.createDocumentFragment();l.textContent.split(/(\s+)/).forEach(s=>{if(!s)return;if(/^\s+$/.test(s)){m.append(s);return}const h=document.createElement("span"),f=document.createElement("span");h.className="m-w",f.className="m-w__in",f.textContent=s,h.append(f),m.append(h),o.push(h)}),l.replaceWith(m)});a(d);const e=t.hasAttribute("aria-label");e||t.setAttribute("aria-label",n.textContent.replace(/\s+/g," ").trim()),t.append(d),t.querySelectorAll(".m-w").forEach(c=>c.setAttribute("aria-hidden","true"));const i=[];let r=null;return o.forEach(c=>{const l=c.getBoundingClientRect().top;(r===null||Math.abs(l-r)>3)&&(i.push([]),r=l),i[i.length-1].push(c.firstChild)}),{lines:i,restore(){t.replaceChildren(n),e||t.removeAttribute("aria-label")}}}function enterSteps(t,n,d){const o=[],a=e=>{if(e===n||e.contains(n)||o.includes(e)||e.matches("img, picture, video, canvas, .frame__img")||d.includes(e)||d.some(r=>e.contains(r)))return;if(e.matches(".btn-row")){[...e.children].forEach(a);return}[...e.childNodes].some(r=>r.nodeType===3&&r.textContent.trim())||!e.children.length||e.matches(ENTER_LEAF)?o.push(e):[...e.children].forEach(a)};return t.querySelectorAll(ENTER_TEXT).forEach(a),o.filter(e=>!e.closest('[aria-hidden="true"]')&&!o.some(i=>i!==e&&i.contains(e))).sort((e,i)=>e.compareDocumentPosition(i)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1)}function enter(){const t=document.querySelector('.hero[data-enter]:not([data-enter="off"])');if(!t||t.classList.contains("is-entered")||t.classList.contains("is-entering"))return;const n=(s=!1)=>{s&&t.classList.add("is-still"),t.classList.add("is-entered")},d=()=>setTimeout(n,1150);if(!html.classList.contains("m-enter")||reduced()||shot()||t.getBoundingClientRect().bottom<0)return n(!0);if(html.classList.contains("m-enter-done"))return d();const o=t.querySelector("h1");if(!o)return n(!0);const a=[...t.querySelectorAll(ENTER_MEDIA)].filter((s,h,f)=>!f.some(p=>p!==s&&p.contains(s))),e=enterSteps(t,o,a),i="cubic-bezier(.22, 1, .36, 1)",r=[];let c=null,l=!1;const m=()=>{l||(l=!0,r.forEach(s=>{try{s.cancel()}catch{}}),c?.restore(),t.classList.remove("is-entering"),n())};Promise.race([document.fonts?.ready??Promise.resolve(),new Promise(s=>setTimeout(s,250))]).then(()=>{if(html.classList.contains("m-enter-done")&&!t.classList.contains("is-entering"))return l=!0,d();c=maskWords(o),t.classList.add("is-entering");const s=c?c.lines:[[o]],h=Math.min(80,240/Math.max(1,s.length-1));s.forEach((u,E)=>u.forEach(g=>r.push(g.animate(c?[{transform:"translateY(calc(100% + .2em))"},{transform:"none"}]:[{transform:"translateY(.35em)",opacity:0},{transform:"none",opacity:1}],{duration:700,delay:80+E*h,easing:i,fill:"both"}))));const f=80+(s.length-1)*h+220;let p=0;e.forEach(u=>{const g={duration:520,delay:!!(u.compareDocumentPosition(o)&Node.DOCUMENT_POSITION_FOLLOWING)?40:f+Math.min(p++,6)*60,easing:i,fill:"both"};r.push(u.animate([{opacity:0},{opacity:1}],g),u.animate([{transform:"translateY(12px)"},{transform:"none"}],{...g,composite:"add"}))}),r.push({finished:new Promise(u=>setTimeout(u,1150)),cancel(){}}),Promise.all(r.map(u=>u.finished)).then(m,m)}).catch(m),setTimeout(m,2400)}if(html.dataset.motion==="off")html.classList.add("m-enter-done");else{html.hasAttribute("data-motion")||html.setAttribute("data-motion","");try{enter()}catch{const n=document.querySelector(".hero[data-enter]");n&&n.classList.add("is-entered")}}
+// Origin uses the same static content with or without JavaScript.
+(() => {
+  const root = document.documentElement;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const easeOut = 'cubic-bezier(.16, 1, .3, 1)';
+  const nav = document.querySelector('.nav');
+  const menu = nav.querySelector('.nav__toggle');
+  const links = nav.querySelector('.nav__links');
+
+  function setMenu(open) {
+    menu.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  }
+
+  menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    setMenu(open);
+    if (open) links.querySelector('a').focus();
+  });
+  links.addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (!link || menu.getAttribute('aria-expanded') !== 'true') return;
+    setMenu(false);
+    const section = document.querySelector(link.hash);
+    section.tabIndex = -1;
+    section.focus({ preventScroll: true });
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      menu.focus();
+    }
+  });
+
+  // The visitor chooses an install target. Their browsing device never sets it.
+  const radios = [...document.querySelectorAll('[data-picker] input')];
+  const devicePanels = [...document.querySelectorAll('.panel[data-device]')];
+  const noDevice = document.querySelector('.panels__empty');
+  const office = document.querySelector('.office');
+  let pickerResize;
+  let pickerAnimations = [];
+
+  radios.forEach(radio => {
+    radio.checked = false;
+    radio.addEventListener('change', () => {
+      const panel = devicePanels.find(item => item.dataset.device === radio.value);
+      if (!radio.checked || !panel) return;
+      const calm = reduced.matches;
+      const from = office.getBoundingClientRect().height;
+      if (pickerResize) pickerResize.cancel();
+      office.classList.remove('is-resizing');
+      pickerAnimations.forEach(animation => animation.cancel());
+      noDevice.hidden = true;
+      devicePanels.forEach(item => { item.hidden = item !== panel; });
+      if (!panel.animate) return;
+
+      const to = office.getBoundingClientRect().height;
+      if (!calm && Math.abs(to - from) >= 1) {
+        // Start from the painted height if another choice interrupts the reflow.
+        office.classList.add('is-resizing');
+        pickerResize = office.animate([{ height: from + 'px' }, { height: to + 'px' }],
+          { duration: 240, easing: 'cubic-bezier(.22, .7, .25, 1)' });
+        pickerResize.onfinish = () => {
+          office.classList.remove('is-resizing');
+          pickerResize = undefined;
+        };
+      }
+
+      const items = [...panel.children].flatMap(item => item.tagName === 'DL' ? [...item.children] : [item]);
+      const start = calm ? { opacity: .9 } : { opacity: .8, transform: 'translateY(4px)' };
+      pickerAnimations = items.map((item, index) => item.animate(
+        [start, { opacity: 1, transform: 'none' }],
+        { duration: calm ? 120 : 180, delay: calm ? 0 : Math.min(index * 24, 96), easing: easeOut, fill: 'backwards' }
+      ));
+    });
+  });
+  devicePanels.forEach(panel => { panel.hidden = true; });
+  noDevice.hidden = false;
+
+  const tabList = document.querySelector('.tabs');
+  const tabs = [...tabList.querySelectorAll('[role=tab]')];
+  const tabPanels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+  const tour = document.querySelector('.tabpanels');
+  const pill = document.createElement('span');
+  pill.className = 'tabs__pill';
+  pill.setAttribute('aria-hidden', 'true');
+  tabList.prepend(pill);
+
+  let selected = 0;
+  let displayed = 0;
+  let request = 0;
+  let tourTransition = Promise.resolve();
+
+  function placePill(jump) {
+    const list = tabList.getBoundingClientRect();
+    const tab = tabs[selected].getBoundingClientRect();
+    if (jump) pill.classList.add('is-jump');
+    const insets = [tab.top - list.top, list.right - tab.right, list.bottom - tab.bottom, tab.left - list.left];
+    pill.style.clipPath = 'inset(' + insets.map(value => value + 'px').join(' ') + ' round 999px)';
+    if (jump) {
+      pill.getBoundingClientRect();
+      pill.classList.remove('is-jump');
+    }
+  }
+
+  async function selectTab(index, focus) {
+    if (focus) tabs[index].focus({ preventScroll: true });
+    if (index === selected) return;
+
+    selected = index;
+    const currentRequest = ++request;
+    tabs.forEach((tab, position) => {
+      tab.setAttribute('aria-selected', String(position === index));
+      tab.tabIndex = position === index ? 0 : -1;
+    });
+    placePill(false);
+    if (index === displayed) {
+      tour.removeAttribute('aria-busy');
+      return;
+    }
+
+    const incoming = tabPanels[index];
+    const image = incoming.querySelector('img');
+    tour.setAttribute('aria-busy', 'true');
+    // Load on demand while the old screenshot remains visible.
+    image.loading = 'eager';
+    if (image.decode) await image.decode().catch(() => {});
+    // Keep the painted blend intact, then apply only the latest waiting selection.
+    await tourTransition;
+    if (request !== currentRequest) return;
+    tour.removeAttribute('aria-busy');
+
+    const outgoing = tabPanels[displayed];
+    const direction = Math.sign(index - displayed);
+    displayed = index;
+    incoming.hidden = false;
+
+    if (!incoming.animate) {
+      outgoing.hidden = true;
+      return;
+    }
+
+    outgoing.inert = true;
+    outgoing.setAttribute('aria-hidden', 'true');
+    incoming.classList.add('is-incoming');
+    const calm = reduced.matches;
+    const timing = { duration: calm ? 150 : 300, easing: calm ? 'linear' : easeOut, fill: 'backwards' };
+    const fade = incoming.animate([{ opacity: 0 }, { opacity: 1 }], timing);
+    if (!calm) incoming.querySelector('.shot').animate(
+      [{ transform: 'translateX(' + direction * 12 + 'px)' }, { transform: 'none' }], timing
+    );
+    tourTransition = fade.finished.then(() => {
+      outgoing.hidden = true;
+      outgoing.inert = false;
+      outgoing.removeAttribute('aria-hidden');
+      incoming.classList.remove('is-incoming');
+    });
+  }
+
+  tabs.forEach((tab, index) => {
+    const panel = tabPanels[index];
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('aria-labelledby', tab.id);
+    panel.tabIndex = 0;
+    panel.hidden = index !== 0;
+    tab.addEventListener('click', () => selectTab(index, false));
+    tab.addEventListener('keydown', event => {
+      const next = { ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: tabs.length - 1 }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      selectTab((next + tabs.length) % tabs.length, true);
+    });
+  });
+
+  root.classList.add('js-ready');
+  placePill(true);
+
+  const menuLinks = [...links.querySelectorAll('a')];
+  const mark = document.createElement('span');
+  mark.className = 'nav__mark';
+  mark.setAttribute('aria-hidden', 'true');
+  links.append(mark);
+  let activeLink;
+
+  function placeMark(jump) {
+    if (!activeLink) {
+      mark.classList.remove('is-on');
+      return;
+    }
+    const snap = jump || !mark.classList.contains('is-on');
+    if (snap) mark.classList.add('is-jump');
+    mark.style.transform = 'translateX(' + (activeLink.offsetLeft + 12) + 'px) scaleX(' + (activeLink.offsetWidth - 24) + ')';
+    if (snap) {
+      mark.getBoundingClientRect();
+      mark.classList.remove('is-jump');
+    }
+    mark.classList.add('is-on');
+  }
+
+  const sections = menuLinks.map(link => ({ link, section: document.querySelector(link.hash) }));
+  let positionFrame;
+  function updatePosition() {
+    positionFrame = undefined;
+    const readingLine = innerHeight * .45;
+    const active = sections.find(({ section }) => {
+      const rect = section.getBoundingClientRect();
+      return rect.top <= readingLine && rect.bottom > readingLine;
+    });
+    const next = active?.link;
+    if (next === activeLink) return;
+    if (activeLink) activeLink.removeAttribute('aria-current');
+    activeLink = next;
+    if (activeLink) activeLink.setAttribute('aria-current', 'location');
+    placeMark(false);
+  }
+  window.addEventListener('scroll', () => {
+    if (positionFrame === undefined) positionFrame = requestAnimationFrame(updatePosition);
+  }, { passive: true });
+  updatePosition();
+
+  if ('IntersectionObserver' in window) {
+    // Below-fold images get one light-up as their frames enter view. Content is visible by default.
+    const frames = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio < .25) return;
+        const frame = entry.target;
+        frames.unobserve(frame);
+        if (reduced.matches) return;
+        frame.classList.add('is-revealing');
+        frame.addEventListener('animationend', () => frame.classList.remove('is-revealing'), { once: true });
+      });
+    }, { threshold: .25 });
+    document.querySelectorAll('.stats, .pair .shot, .duo .shot, .shot--video').forEach(frame => {
+      if (frame.getBoundingClientRect().top >= innerHeight) frames.observe(frame);
+    });
+  }
+
+  const film = document.querySelector('.film__image');
+  const photo = film.querySelector('img');
+  const leader = film.querySelector('.film__leader');
+
+  function openFilm() {
+    const rect = film.getBoundingClientRect();
+    if (reduced.matches || document.hidden || rect.bottom <= 0 || rect.top >= innerHeight) return;
+    leader.classList.add('is-playing');
+    leader.addEventListener('animationend', () => leader.classList.remove('is-playing'), { once: true });
+  }
+
+  if (!reduced.matches) {
+    if (photo.decode) photo.decode().then(openFilm).catch(() => {});
+    else if (photo.complete && photo.naturalWidth) openFilm();
+    else photo.addEventListener('load', openFilm, { once: true });
+  }
+
+  let resizeFrame;
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => { updatePosition(); placePill(true); placeMark(true); });
+  });
+  if (document.fonts) document.fonts.ready.then(() => { updatePosition(); placePill(true); placeMark(true); });
+})();
