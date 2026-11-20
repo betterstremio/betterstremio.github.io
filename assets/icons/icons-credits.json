@@ -22,5 +22,17 @@
     "url": "https://github.com/gilbarbara/logos",
     "trademark": true,
     "markUrl": "https://www.microsoft.com/windows"
+  },
+  {
+    "file": "mac.svg",
+    "icon": "laptop outline",
+    "name": "Mac",
+    "kind": "mono",
+    "source": "drawn for this site",
+    "author": "Origin",
+    "licence": "GPL-3.0",
+    "url": "https://github.com/betterstremio/betterstremio.github.io",
+    "trademark": false,
+    "note": "Generic laptop, not Apple's logo."
   }
 ]

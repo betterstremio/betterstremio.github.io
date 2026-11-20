@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Origin — A fast, native streaming app</title>
-<meta name="description" content="Origin is a free, open-source native app for your own Stremio and Nuvio accounts and addons. It runs on LG webOS, Android TV, Fire TV, Android phones and Windows.">
+<meta name="description" content="Origin is a free, open-source native app for your own Stremio and Nuvio accounts and addons. It runs on LG webOS, Android TV, Fire TV, Android phones, Windows and Macs.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Origin — A fast, native streaming app">
 <meta property="og:description" content="A free, open-source native app, written in C, for your own Stremio and Nuvio accounts and addons.">
@@ -42,7 +42,7 @@
     <div class="hero__opening">
       <div class="hero__intro">
         <h1 id="hero-h">Origin</h1>
-        <p class="hero__lead">A fast, native streaming app for your TV, phone and Windows PC.</p>
+        <p class="hero__lead">A fast, native streaming app for your TV, phone, Windows PC and Mac.</p>
         <p class="hero__release">Version <strong>3.0.2</strong> · Free · Open source · <span class="license">GPL-3.0</span></p>
       </div>
       <figure class="film">
@@ -69,6 +69,7 @@
           <input type="radio" name="device" id="d-lg" value="lg"><label for="d-lg">LG TV</label>
           <input type="radio" name="device" id="d-android" value="android"><label for="d-android">Android, Google &amp; Fire TV</label>
           <input type="radio" name="device" id="d-windows" value="windows"><label for="d-windows">Windows</label>
+          <input type="radio" name="device" id="d-mac" value="mac"><label for="d-mac">Mac (beta)</label>
           <input type="radio" name="device" id="d-phone" value="phone"><label for="d-phone">Android phone (beta)</label>
           <input type="radio" name="device" id="d-samsung" value="samsung"><label for="d-samsung">Samsung TV (preview)</label>
         </div>
@@ -98,6 +99,15 @@
           <dl>
             <div><dt>Needs</dt><dd>Windows 10 or 11, 64-bit</dd></div>
             <div><dt>Install</dt><dd><p><code>io.github.betterstremio.origin_3.0.2_<wbr>windows_setup.exe</code> (44.9 MB, no admin prompt) or <code>io.github.betterstremio.origin_3.0.2_<wbr>windows_portable.zip</code> (59.7 MB).</p><p>The files are not code-signed, so SmartScreen says unknown publisher: choose More info, then Run anyway.</p></dd></div>
+          </dl>
+          <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
+          <a class="quiet" href="#get">All install details</a>
+        </div>
+        <div class="panel" data-device="mac">
+          <p class="panel__name">Mac, beta</p>
+          <dl>
+            <div><dt>Needs</dt><dd>Apple Silicon (M1 or newer), macOS 11 or later</dd></div>
+            <div><dt>Install</dt><dd><p>Open <code>io.github.betterstremio.origin_3.0.2_<wbr>macos-arm64.dmg</code> (19.5 MB) and drag Origin to Applications.</p><p>Apple has not signed the app, so the first time you open it macOS warns you. Go to System Settings, Privacy &amp; Security, then choose Open Anyway.</p></dd></div>
           </dl>
           <a class="btn btn--primary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a>
           <a class="quiet" href="#get">All install details</a>
@@ -135,7 +145,7 @@
         <li><strong><span class="visually-hidden">150 MB</span><span aria-hidden="true" data-count-from="300">150 MB</span></strong><span>Peak memory in our 3.0.0 poster test on an LG C1, down from about 300 MB. Posters stay compressed in memory.</span></li>
         <li><strong>5.5 MB</strong><span>LG webOS package</span></li>
       </ul>
-      <p class="runs"><span class="visually-hidden">Runs on: </span>LG webOS<i></i>Android TV<i></i>Google TV<i></i>Fire TV<i></i>Android phones<i></i>Windows<i></i>Samsung TV (preview)</p>
+      <p class="runs"><span class="visually-hidden">Runs on: </span>LG webOS<i></i>Android TV<i></i>Google TV<i></i>Fire TV<i></i>Android phones<i></i>Windows<i></i>Mac (beta)<i></i>Samsung TV (preview)</p>
     </div>
   </section>
 
@@ -270,6 +280,13 @@
           <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
         </li>
         <li class="row">
+          <div class="row__name"><img src="assets/icons/mac.svg" alt="" width="40" height="40" loading="lazy"><h3>Mac, beta</h3></div>
+          <div><span class="lbl">Needs</span>Apple Silicon (M1 or newer), macOS 11 or later</div>
+          <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>macos-arm64.dmg</code> (19.5 MB)</div>
+          <div><span class="lbl">Install</span>Drag Origin to Applications. Apple has not signed the app: the first time, open it from System Settings, Privacy &amp; Security, Open Anyway. The keyboard works as the remote.</div>
+          <div class="row__btn"><a class="btn btn--secondary btn--block" href="https://github.com/betterstremio/origin/releases/latest">Get it on GitHub</a></div>
+        </li>
+        <li class="row">
           <div class="row__name"><img class="mark--samsung" src="assets/icons/samsung.svg" alt="" width="72" height="11" loading="lazy"><h3>Samsung TVs, preview</h3></div>
           <div><span class="lbl">Needs</span>Tizen 4 or later</div>
           <div><span class="lbl">Files</span><code>io.github.betterstremio.origin_3.0.2_<wbr>tizen-beta.tpk</code> (7.4 MB)</div>
@@ -308,7 +325,7 @@
       <div class="legal__text">
         <p>Stremio™ and Nuvio are the names of their owners. Origin is independent and unofficial, and is not affiliated with, endorsed by or sponsored by Stremio or Nuvio. The names only describe compatibility.</p>
         <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-        <p>LG, Samsung and Android names and logos are trademarks of their owners.</p>
+        <p>LG, Samsung, Android, Apple and Mac names and logos are trademarks of their owners.</p>
         <p>Onest typeface, SIL Open Font License 1.1.</p>
       </div>
       <div class="legal__links"><h3>Project</h3><ul><li><a href="https://github.com/betterstremio/origin">Source</a></li><li><a href="https://github.com/betterstremio/origin/issues">Issues</a></li><li><a href="https://ko-fi.com/blueee123">Support</a></li></ul></div>

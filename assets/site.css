@@ -142,6 +142,7 @@ h3 { font-size: 19px; line-height: 1.3; font-weight: 600; }
 @keyframes film-sweep { to { transform: rotate(270deg); } }
 
 @media (max-width: 480px) {
+  .hero { padding-top: 16px; }
   .hero__lead { margin-top: 10px; }
   .hero__release { margin-top: 13px; }
   .film__stock { padding-inline: 7px; }
@@ -170,7 +171,12 @@ fieldset.picker { display: none; border: 0; margin: 0; padding: 0; min-width: 0;
   display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1px solid var(--ctl);
   border-radius: 4px; font-size: 14px; font-weight: 600; cursor: pointer; user-select: none; transition: border-color .15s;
 }
-@media (max-width: 480px) { .picker label { padding-inline: 8px; } }
+@media (max-width: 480px) {
+  .picker label { padding-inline: 8px; }
+  /* Six devices wrap to three rows on phones: keep the empty-state link on the first screen. */
+  .office { margin-top: 16px; }
+  .picker__opts { margin-top: 8px; gap: 6px; }
+}
 .picker label:hover { border-color: var(--ink); }
 .picker input:checked + label { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .picker input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 3px; }
